@@ -219,7 +219,7 @@ function answer(q){
     if(ent){const c=el('div','chips');const ch=el('div','chip','▶ '+escapeHtml(ent.term)+' 더 알아보기');ch.onclick=()=>ask(ent.term);c.appendChild(ch);b.appendChild(c);}
     scroll(); return;
   }
-  if(res.length && res[0].s>=45){
+  if(res.length && res[0].s>=50){
     const e=res[0].e; const b=botWrap();
     const pre=hasForeign?'<div class="short">핀로그 챗봇은 <b>국내 금융 이슈</b> 위주라, 해외 사례는 아직 준비돼 있지 않아요. 가장 가까운 국내 내용을 알려드릴게요 👇</div>':'';
     b.innerHTML=pre+renderEntry(e,tk);
