@@ -250,8 +250,8 @@ document.getElementById('hdav').innerHTML='<img src="'+IMG.goma+'" alt="고마">
   /* 인사말 라인 제거 — 마스코트가 각자 자기소개 */
   b.appendChild(el('div','welsub','금융용어부터 시사 쟁점, 면접 활용까지 함께 정리해 드릴게요.'));
   b.appendChild(el('div','hint','이렇게 물어보세요'));
-  const pops=['공매도','스테이블코인','밸류업','PER'];
-  const c=el('div','chips'); pops.forEach(p=>{const ch=el('div','chip',p);ch.onclick=()=>ask(p);c.appendChild(ch);}); b.appendChild(c);
+  const pops=['우리나라 밸류업과 관련된 정보들 알려줘.','미국 빅테크에 관련된 정보들 알려줘.'];
+  const c=el('div','chips'); c.style.flexDirection='column'; c.style.alignItems='flex-start'; pops.forEach(p=>{const ch=el('div','chip',p);ch.onclick=()=>ask(p);c.appendChild(ch);}); b.appendChild(c);
 })();
 </script>
 </body>
