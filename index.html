@@ -147,7 +147,7 @@ function searchFAQ(q){
       else if(nw.length>=2 && ftk.some(fw=>{const nf=norm(fw);return nf.includes(nw)||nw.includes(nf);})) s+=12;
       if(norm(f.a).includes(nw)) s+=4;}
     if(s>bs){bs=s;best=f;}}
-  return bs>=32?{f:best,s:bs}:null;
+  return bs>=40?{f:best,s:bs}:null;
 }
 function highlight(text,tk){let h=escapeHtml(text);
   tk.forEach(w=>{if(w.length<2)return;const re=new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');h=h.replace(re,'<span class="hl">$1</span>');});
@@ -186,7 +186,7 @@ function relatedChips(b,arr,excludeId){
 function catChips(b,label){
   b.appendChild(el('div','hint',label||'카테고리로 찾아보기:'));
   const c=el('div','chips');
-  CATS.forEach(cat=>{const ch=el('div','chip cat',escapeHtml(cat));ch.onclick=()=>ask(cat);c.appendChild(ch);});
+  CATS.forEach(cat=>{if(cat.includes('학습주제'))return;const ch=el('div','chip cat',escapeHtml(cat));ch.onclick=()=>ask(cat);c.appendChild(ch);});
   b.appendChild(c);
 }
 
@@ -238,7 +238,7 @@ inp.addEventListener('keydown',e=>{if(e.key==='Enter'){const v=inp.value.trim();
 
 // quick bar: 21주제 + categories
 (function(){
-  const t=el('div','chip cat','🎓 학습주제'); t.onclick=()=>{
+  const t=el('div','chip cat','🎓 핀로그 학습주제'); t.onclick=()=>{
     const b=botWrap(); b.innerHTML='핀로그가 학습한 <b>21개 주제</b>예요. 눌러서 결론·면접Tip까지 확인하세요.';
     const c=el('div','chips'); TOPICS.forEach(e=>{const ch=el('div','chip',escapeHtml(e.term));ch.onclick=()=>ask(e.term);c.appendChild(ch);});
     b.appendChild(c); scroll();
