@@ -239,7 +239,7 @@ inp.addEventListener('keydown',e=>{if(e.key==='Enter'){const v=inp.value.trim();
     const c=el('div','chips'); TOPICS.forEach(e=>{const ch=el('div','chip',escapeHtml(e.term));ch.onclick=()=>ask(e.term);c.appendChild(ch);});
     b.appendChild(c); scroll();
   }; quick.appendChild(t);
-  CATS.forEach(cat=>{const ch=el('div','chip cat',escapeHtml(cat));ch.onclick=()=>ask(cat);quick.appendChild(ch);});
+  CATS.forEach(cat=>{if(cat.includes('학습주제'))return;const ch=el('div','chip cat',escapeHtml(cat));ch.onclick=()=>ask(cat);quick.appendChild(ch);});
 })();
 document.getElementById('hdav').innerHTML='<img src="'+IMG.goma+'" alt="고마">';
 // welcome
