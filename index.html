@@ -248,9 +248,9 @@ document.getElementById('hdav').innerHTML='<img src="'+IMG.goma+'" alt="고마">
   b.innerHTML='';
   b.appendChild(el('div','mascots','<div class="mc"><img src="'+IMG.oreusoFull+'"><span class="nm o">오르소 · 상승장 황소</span></div><div class="mc"><img src="'+IMG.gomaFull+'"><span class="nm g">고마 · 하락장 곰</span></div>'));
   b.appendChild(el('div','welgreet','안녕하세요! 핀로그의 <b>오르소</b>와 <b>고마</b>예요.'));
-  b.appendChild(el('div','welsub','금융용어부터 시사 쟁점, 면접 활용까지 함께 정리해 드릴게요. <span class="welcount">(용어 '+KB.length+' · 학습주제 21 · FAQ '+FAQS.length+')</span>'));
+  b.appendChild(el('div','welsub','금융용어부터 시사 쟁점, 면접 활용까지 함께 정리해 드릴게요.'));
   b.appendChild(el('div','hint','이렇게 물어보세요'));
-  const pops=['공매도가 뭐야?','스테이블코인과 CBDC 차이','밸류업','코스피','PER','노란봉투법'];
+  const pops=['공매도','토큰증권(STO)','스테이블코인','밸류업 정책','PER','레그테크'];
   const c=el('div','chips'); pops.forEach(p=>{const ch=el('div','chip',p);ch.onclick=()=>ask(p);c.appendChild(ch);}); b.appendChild(c);
 })();
 </script>
