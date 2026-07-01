@@ -238,7 +238,7 @@ inp.addEventListener('keydown',e=>{if(e.key==='Enter'){const v=inp.value.trim();
 
 // quick bar: 21주제 + categories
 (function(){
-  const t=el('div','chip cat','🎓 핀로그 21주제'); t.onclick=()=>{
+  const t=el('div','chip cat','🎓 학습주제'); t.onclick=()=>{
     const b=botWrap(); b.innerHTML='핀로그가 학습한 <b>21개 주제</b>예요. 눌러서 결론·면접Tip까지 확인하세요.';
     const c=el('div','chips'); TOPICS.forEach(e=>{const ch=el('div','chip',escapeHtml(e.term));ch.onclick=()=>ask(e.term);c.appendChild(ch);});
     b.appendChild(c); scroll();
