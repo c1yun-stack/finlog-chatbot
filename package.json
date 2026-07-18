@@ -1,7 +1,7 @@
 {
   "name": "finlog-chatbot",
   "version": "2.0.0",
-  "description": "핀로그(FinLog) 금융 챗봇 - 금융용어 88 + 학습주제 21 + FAQ 63",
+  "description": "핀로그(FinLog) 금융 챗봇 - 금융용어 87 + 학습주제 21 + FAQ 63",
   "main": "server.js",
   "scripts": { "start": "node server.js" },
   "dependencies": { "express": "^4.19.2" },
